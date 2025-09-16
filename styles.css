@@ -1,0 +1,226 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roche Sans', 'Inter', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+.app-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    color: #0065B3;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+#message-area {
+    font-size: 1.2em;
+    color: #5f6368;
+    padding: 50px 0;
+}
+
+#level-badge {
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    padding: 6px 14px;
+    font-size: 1em;
+    font-weight: 700;
+    color: white;
+    border-radius: 20px;
+    background-color: #544F4F;
+}
+
+#level-badge.explorer {
+    background-color: #0065B3;
+}
+
+#level-badge.advanced {
+    background-color: #7D0096;
+}
+
+#level-badge.future {
+    background-color: #D91E5B;
+}
+
+.progress-bar-container {
+    margin: 20px 0;
+}
+
+.progress-bar-track {
+    position: relative;
+    width: 100%;
+    height: 12px;
+    background-color: #DBD6D1;
+    border-radius: 6px;
+}
+
+.progress-bar-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: #0065B3;
+    border-radius: 6px;
+    transition: width 0.5s ease-in-out;
+}
+
+.progress-marker {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 28px;
+    transition: left 0.5s ease-in-out;
+}
+
+#progress-label {
+    margin-top: 10px;
+    font-weight: 500;
+    color: #706B69;
+}
+
+#cluster-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 40px 0;
+    min-height: 200px;
+}
+
+.station-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.station-container:hover {
+    transform: scale(1.05);
+}
+
+.station-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+}
+
+.station-container.locked .station-image {
+    filter: grayscale(100%);
+    opacity: 0.6;
+}
+
+.station-container.unlocked .station-image {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+.station-label {
+    margin-top: 10px;
+    font-weight: 500;
+    color: #544F4F;
+}
+
+.details-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.details-popup-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.details-popup-content {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 400px;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.details-popup-overlay.visible .details-popup-content {
+    transform: scale(1);
+}
+
+.details-popup-content h2 {
+    margin-top: 0;
+    color: #0065B3;
+}
+
+.details-popup-content p {
+    color: #544F4F;
+    line-height: 1.6;
+}
+
+.unlock-area {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #DBD6D1;
+}
+
+#code-input {
+    font-family: 'Roche Sans', 'Inter', sans-serif;
+    font-size: 1em;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #C2BAB5;
+    width: 250px;
+    margin-right: 10px;
+}
+
+#unlock-button {
+    font-family: 'Roche Sans', 'Inter', sans-serif;
+    font-size: 1em;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    background-color: #0065B3;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#unlock-button:disabled {
+    background-color: #C2BAB5;
+    cursor: not-allowed;
+}
+
+#unlock-button:hover:not(:disabled) {
+    background-color: #00508c;
+}
+
+#unlock-message {
+    margin-top: 10px;
+    height: 20px;
+    font-weight: 500;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dein Digitaler KI-Pass</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="app-container">
+<h1 id="welcome-title">KI-Pass wird geladen...</h1>
+<div id="level-badge" style="display: none;"></div>
+
+
+<div class="progress-bar-container">
+<div class="progress-bar-track">
+<div id="progress-bar-fill" class="progress-bar-fill"></div>
+<div id="progress-marker" class="progress-marker"></div>
+</div>
+<div id="progress-label"></div>
+</div>
+
+
+<div id="cluster-container">
+<div id="message-area"><p>Stationen werden geladen...</p></div>
+</div>
+
+
+<div class="unlock-area">
+<input type="text" id="code-input" placeholder="Freischaltcode eingeben...">
+<button id="unlock-button">Freischalten</button>
+<p id="unlock-message"></p>
+</div>
+</div>
+
+
+<div id="details-popup" class="details-popup-overlay">
+<div class="details-popup-content">
+<h2 id="popup-title"></h2>
+<p id="popup-description"></p>
+</div>
+</div>
+
+
+<script defer src="app.js"></script>
+</body>
+</html>
